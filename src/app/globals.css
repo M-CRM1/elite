@@ -7,12 +7,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -24,4 +24,51 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+/* login.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  width: 300px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+label {
+  margin: 0.5rem 0;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #171717;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #90FFAE;
+  border: none;
+  cursor: pointer;
+}
+
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
 }
