@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const Login = () => {
@@ -6,6 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,10 +31,9 @@ const Login = () => {
       }
 
       const data = await response.json();
-      // Handle successful login (e.g., save token, redirect)
-      console.log('Login successful:', data);
-      // Example: localStorage.setItem('token', data.token);
-      // Redirect to a protected route or dashboard
+      const {access_token} = data.data
+      localStorage.setItem('Token', access_token);
+      router.push('/category')
     } catch (error) {
       setError('An error occurred. Please try again.');
     } finally {
@@ -63,7 +64,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" className='login_btn' disabled={isLoading}>
           {isLoading ? 'Logging in...' : 'Login'}
         </button>
       </form>

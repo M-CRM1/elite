@@ -59,7 +59,7 @@ input {
   border: 1px solid #171717;
 }
 
-button {
+.login_btn {
   width: 100%;
   padding: 0.5rem;
   background-color: #90FFAE;
@@ -72,3 +72,18 @@ button {
   color: red;
   margin-bottom: 1rem;
 }
+
+
+.category-item { 
+  background-color: #D9D9D9;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+li.category-item {
+  list-style-type: decimal;
+}
+
+.drag_btn {
+  transform: rotate(90deg)
+}
+
